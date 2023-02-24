@@ -2,6 +2,9 @@ package conta_Bancaria;
 
 import java.util.Scanner;
 
+import conta_Bancaria.model.ContaCorrente;
+import conta_Bancaria.model.ContaPoupanca;
+
 import conta_Bancaria.model.Conta;
 import conta_Bancaria.util.Cores;
 
@@ -12,7 +15,7 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 
 		// Criamos o Objeto Conta c1
-		Conta c1 = new Conta(1, 123, 1, "Erica Araújo", 30000.0f);
+		Conta c1 = new Conta(1, 123, 1, "Maria f", 30000.0f);
 
 		// Visualizamos os dados da Conta c1
 		c1.visualizar();
@@ -24,7 +27,7 @@ public class Menu {
 		System.out.println("\n\n" + c1.getSaldo());
 
 		// Criamos o Objeto Conta c2
-		Conta c2 = new Conta(2, 132, 1, "Dener Cardoso", 50000.0f);
+		Conta c2 = new Conta(2, 132, 1, "Aristoteles", 50000.0f);
 
 		// Visualizamos os dados da Conta c2
 		c2.visualizar();
@@ -40,6 +43,28 @@ public class Menu {
 		c1.getSaldo();
 
 		int opcao;
+		
+		// Teste da Conta Corrente
+				ContaCorrente cc1 = new ContaCorrente(3, 123, 1, "Laise", 20000f, 1000f);
+				cc1.visualizar();
+				cc1.sacar(32000);
+				cc1.visualizar();
+
+				System.out.println("\n");
+
+				// Teste da Conta Poupança
+				ContaPoupanca cp1 = new ContaPoupanca(4, 123, 2, "Maria", 40000f, 4);
+				cp1.visualizar();
+				System.out.println("\n");
+				cp1.sacar(100);
+				cp1.visualizar();
+				System.out.println("\n");
+				cp1.depositar(500);
+				cp1.visualizar();
+
+				int numero, agencia, tipo, opcao1, aniversario, numeroDestino;
+				String titular;
+				float saldo, limite, valor;
 
 		while (true) {
 
@@ -63,15 +88,15 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
 
-			opcao = leia.nextInt();
+			opcao1 = leia.nextInt();
 
-			if (opcao == 9) {
+			if (opcao1 == 9) {
 				System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				leia.close();
 				System.exit(0);
 			}
 
-			switch (opcao) {
+			switch (opcao1) {
 			case 1:
 				System.out.println("Criar Conta\n\n");
 
