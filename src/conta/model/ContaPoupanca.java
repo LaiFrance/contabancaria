@@ -1,6 +1,6 @@
-package conta_Bancaria.model;
+package conta.model;
 
-public class ContaPoupanca extends Conta {
+public class ContaPoupanca extends Conta{
 
 	private int aniversario;
 
@@ -16,10 +16,10 @@ public class ContaPoupanca extends Conta {
 	public void setAniversario(int aniversario) {
 		this.aniversario = aniversario;
 	}
-
+	
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("AniversÃ¡rio da conta: " + this.aniversario);
+		System.out.println("Aniversário da conta: " + this.aniversario);
 	}
-
+	
 }
